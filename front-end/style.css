@@ -204,6 +204,15 @@ main {
 }
 
 @media screen and (max-width: 600px) {
+    .category-title {
+        font-size: 3rem;
+        margin: 2rem 0 2rem 1rem;
+    }
+
+    .category-item {
+        height: 4rem;
+    }
+
     #category-list .buttons {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
