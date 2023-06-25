@@ -1,3 +1,29 @@
+/* 모달 테스트 */
+// Get the modal
+let modal = document.getElementById("custom-modal");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Function to show modal with specific text
+function showModal(text) {
+  document.getElementById("modal-text").innerText = text;
+  modal.style.display = "block";
+}
+
+
 /* 
 회원가입 API 연동
 
@@ -52,10 +78,10 @@ async function signup(event) {
   const isValidSignUp = signUpReturn.data.code == 200;
 
   if (!isValidSignUp) {
-    if(signUpReturn.data.code == 401) {
-        return alert("아이디에 중복이 발생했습니다. 다른 아이디를 설정해주세요.");
+    if (signUpReturn.data.code == 401) {
+      return alert("아이디에 중복이 발생했습니다. 다른 아이디를 설정해주세요.");
     } else {
-        return alert("요청에 문제가 생겼습니다.");
+      return alert("요청에 문제가 생겼습니다.");
     }
   }
 

@@ -1,117 +1,188 @@
+/* Firefox */
+input::-moz-placeholder {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.6rem;
+}
+
+/* Internet Explorer, Edge */
+input:-ms-input-placeholder {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.6rem;
+}
+
+/* Chrome, Safari, Opera */
+input::-webkit-input-placeholder {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.6rem;
+}
+
 .signin-container {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* 개체의 너비, 높이에 대한 비율 */
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .signin-container h2 {
-    font-size: 3.5rem;
-  }
-  
-  .signin-form {
-    width: 90%;
-    max-width: 50rem;
-    margin: 2rem auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-  
-  .signin-form input {
-    width: 100%;
-    font-size: 2rem;
-    line-height: 2;
-    border: 3px solid #606060;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-  }
-  
-  #signin,
-  input#signup {
-    padding-left: 0;
-    background: #4aa8d8;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-family: inherit;
-  }
-  
-  #signin:hover,
-  input#signup:hover {
-    color: black;
-  }
-  
-  .signup-container {
-    width: 100%;
-    text-align: center;
-  }
-  
-  #signup {
-    display: block;
-    color: black;
-    font-size: 2rem;
-    text-decoration: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 개체의 너비, 높이에 대한 비율 */
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-  /* 테스트 */
+.signin-container h2 {
+  color: var(--clr-font);
+  font-size: 3.5rem;
+}
 
-  /* 회원용/비회원용 헤더 설정 */
+.signin-form {
+  width: 90%;
+  max-width: 50rem;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.signin-form input {
+  width: 100%;
+  font-size: 2rem;
+  line-height: 2;
+  border: 2px solid var(--clr-dlg-bdr);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.signin-form input:focus {
+  outline: none;
+  border: 2px solid var(--clr-sel) !important;
+}
+
+#signin,
+input#signup {
+  padding-left: 0;
+  background: var(--clr-sel);
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+
+/* #signin:hover,
+input#signup:hover {
+  color: var(--clr-font);
+} */
+
+.signup-container {
+  width: 100%;
+  text-align: center;
+}
+
+#signup {
+  display: block;
+  color: var(--clr-font);
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 테스트 */
+
+/* 회원용/비회원용 헤더 설정 */
 .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-button {
-    font-family: inherit;
-    font-size: 2.5rem;
-    border: none;
-    background: none;
-  }
-  
-  /* 로그인 버튼 기본값: 숨김처리 */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-  }
-  
-  .dropdown-content button {
-    display: block;
-    font-size: 2rem;
-    font-family: inherit;
-    width: 100%;
-    border: none;
-  }
-  
-  .dropdown-content button:hover {
-    color: white;
-    background-color: #606060;
-  }
-  
-  /* 호버시 로그아웃 버튼 보이도록 설정 */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /*  */
-  
-  .sign-container {
-    font-size: 2.5rem;
-    border: 0;
-    background: none;
-    cursor: pointer;
-    font-family: inherit;
-  }
+  position: relative;
+}
+
+.dropdown-button {
+  font-family: inherit;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  color: var(--clr-white);
+}
+
+/* 로그인 버튼 기본값: 숨김처리 */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.dropdown-content button {
+  display: block;
+  font-size: 1.6rem;
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  background-color: var(--clr-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dropdown-content button:hover {
+  color: white;
+  background-color: var(--clr-sel);
+  cursor: pointer;
+}
+
+/* 호버시 로그아웃 버튼 보이도록 설정 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/*  */
+
+.sign-container {
+  font-size: 2.5rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 모달 */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

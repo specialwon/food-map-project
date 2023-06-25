@@ -139,6 +139,22 @@ main {
     font-size: 2.4rem;
 }
 
+.unsigned a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-white);
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+}
+
+.unsigned svg {
+    margin-right: 4px;
+    transform: translateY(-1px);  /* 이동할 픽셀 수를 조절해야 합니다 */
+    fill: var(--clr-white)
+}
+
 /* .nav-contact {
     display: flex;
     align-items: center;
