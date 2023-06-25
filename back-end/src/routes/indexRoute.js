@@ -10,4 +10,7 @@ module.exports = function (app) {
   // app.delete("/students/:studentIdx", index.deleteStudent);
 
   app.get("/restaurant", index.readRestaurants);
+  app.post("/sign-up", index.createUsers); // 회원가입
+  app.post("/sign-in", index.createJwt); // 로그인
+  app.get("/jwt", jwtMiddleware, index.readJwt); // 로그인 유지, 토큰 검증
 };

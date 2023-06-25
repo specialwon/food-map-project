@@ -1,5 +1,34 @@
 const { pool } = require("../../config/database");
 
+// 회원가입 아이디 중복 검증
+exports.isValidId = async function (connection, userID) {
+  const Query = `SELECT COUNT(*) FROM Users WHERE userID =?;`;
+  const Params = [userID];
+  const rows = await connection.query(Query, Params);
+
+  return rows;
+};
+
+// 로그인 (회원검증)
+exports.isValidUsers = async function (connection, userID, password) {
+  const Query = `SELECT userIdx, nickname FROM Users where userID = ? and password = ? and status = 'A';`;
+  const Params = [userID, password];
+
+  const rows = await connection.query(Query, Params);
+
+  return rows;
+};
+
+// 회원가입
+exports.insertUsers = async function (connection, userID, password, nickname) {
+  const Query = `insert into Users(userID, password, nickname) values (?,?,?);`;
+  const Params = [userID, password, nickname];
+
+  const rows = await connection.query(Query, Params);
+
+  return rows;
+};
+
 // 식당조회 커리를 MY SQL로 날립니다.
 exports.selectRestaurants = async function (connection, category) {
 

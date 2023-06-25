@@ -139,7 +139,7 @@ main {
     font-size: 2.4rem;
 }
 
-.nav-contact {
+/* .nav-contact {
     display: flex;
     align-items: center;
     border: 0;
@@ -149,7 +149,7 @@ main {
     font-weight: 300;
     font-size: 1.8rem;
     color: var(--clr-white);
-}
+} */
 
 .nav-contact svg {
     margin-right: 2px;

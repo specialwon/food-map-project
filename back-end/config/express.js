@@ -15,7 +15,7 @@ module.exports = function () {
   app.use(methodOverride());
 
   app.use(cors());
-  app.use(express.static("/home/ubuntu/food-map/front"));
+  app.use(express.static("/home/ubuntu/food-map-project/front-end"));
 
   // app.use(express.static(process.cwd() + '/public'));
 

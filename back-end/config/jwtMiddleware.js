@@ -3,6 +3,8 @@ const secret_config = require("./secret");
 const jwtMiddleware = function (req, res, next) {
   // read the token from header or url
   const token = req.headers["x-access-token"] || req.query.token;
+
+  console.log(token);
   // token does not exist
   if (!token) {
     return res.status(403).json({
