@@ -113,17 +113,23 @@ a {
   display: none;
   position: absolute;
   width: 100%;
-}
-
-.dropdown-content button {
-  display: block;
-  font-size: 1.6rem;
-  font-family: inherit;
-  width: 100%;
-  border: none;
   background-color: var(--clr-white);
   border-radius: 4px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  height: auto; /* 높이를 auto로 변경 */
+  overflow: hidden; /* 부모의 경계를 넘어서는 자식 요소를 숨김 */
+}
+
+.dropdown-content button {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: block;
+  font-size: 1.6rem;
+  font-family: inherit;
+  height: 32px;
+  width: 100%;
+  border: none;
+  background-color: var(--clr-white);
 }
 
 .dropdown-content button:hover {

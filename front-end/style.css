@@ -181,8 +181,16 @@ main {
     display: flex;
 }
 
-.category-item {
+#category-list .buttons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category-item {
+    flex: 1 0 calc(100% / 9 - 20px);
+    text-align: center;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -192,6 +200,15 @@ main {
     font-family: inherit;
     font-weight: 400;
     font-size: 1.6rem;
+    /* margin-bottom: 1rem; */
+}
+
+@media screen and (max-width: 600px) {
+    #category-list .buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
 }
 
 .category-item svg {
@@ -220,6 +237,7 @@ main {
         margin: 0 auto;
     }
 }
+
 
 /* 카카오맵 CSS */
 
